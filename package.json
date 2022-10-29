@@ -1,6 +1,5 @@
 {
   "name": "@example/minimal",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,6 +15,8 @@
   "devDependencies": {
     "@unocss/preset-uno": "^0.45.30",
     "@unocss/reset": "^0.45.30",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.7.0",
     "unocss": "^0.45.30"
   }
 }
