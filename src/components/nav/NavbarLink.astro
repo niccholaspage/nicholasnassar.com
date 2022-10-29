@@ -1,9 +1,9 @@
 ---
 interface Props {
-    current?: boolean;
-    mobile?: boolean;
-    href: string;
-    children: any;
+  current?: boolean;
+  mobile?: boolean;
+  href: string;
+  children: any;
 }
 
 const { current = false, mobile = false, href } = Astro.props;
@@ -13,26 +13,21 @@ let classes = "px-3 py-2 rounded-md text-sm font-medium".split(" ");
 const ariaProps: Record<string, string> = {};
 
 if (current) {
-    classes = ["bg-gray-900", "text-white", ...classes];
+  classes = ["bg-violet-900", "text-white", ...classes];
 
-    ariaProps["aria-current"] = "page";
+  ariaProps["aria-current"] = "page";
 } else {
-    classes = [
-        "text-gray-300",
-        "hover:bg-gray-700",
-        "hover:text-white",
-        ...classes,
-    ];
+  classes = ["text-violet-300", "hover:bg-violet-700", "hover:text-white", ...classes];
 }
 
 if (mobile) {
-    classes.splice(classes.indexOf("text-sm"), 1);
+  classes.splice(classes.indexOf("text-sm"), 1);
 
-    classes.push("text-base");
-    classes.push("block");
+  classes.push("text-base");
+  classes.push("block");
 }
 ---
 
 <a class={classes.join(" ")} {...ariaProps} href={href}>
-    <slot />
+  <slot />
 </a>
