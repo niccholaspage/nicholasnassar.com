@@ -1,0 +1,13 @@
+---
+interface Props {
+    mobile: boolean
+}
+
+const { mobile } = Astro.props;
+
+import NavbarLink from "./NavbarLink.astro";
+---
+<NavbarLink mobile={mobile} current={true} href="#">Home</NavbarLink>
+<NavbarLink mobile={mobile} href="#">Projects</NavbarLink>
+<NavbarLink mobile={mobile} href="#">Blog</NavbarLink>
+<NavbarLink mobile={mobile} href="#">Contact</NavbarLink>
