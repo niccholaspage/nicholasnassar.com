@@ -7,7 +7,9 @@ import { presetUno } from "unocss";
 export default defineConfig({
   integrations: [
     Unocss({
-      presets: [presetUno()],
+      presets: [presetUno({
+        dark: "media"
+      })],
     }),
   ],
 });
