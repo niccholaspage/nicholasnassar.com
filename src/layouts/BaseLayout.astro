@@ -3,15 +3,17 @@ import Navbar from "../components/nav/Navbar.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Nicholas Nassar</title>
-	</head>
-	<body class="bg-gray-400">
-		<Navbar></Navbar>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Nicholas Nassar</title>
+  </head>
+  <body class="bg-gray-400">
+    <Navbar />
+    <div class="container mx-auto px-4">
+      <slot />
+    </div>
+  </body>
 </html>
