@@ -1,5 +1,6 @@
 ---
 import NavbarLinks from "./NavbarLinks.astro";
+import Logo from "../../images/logo.svg";
 ---
 
 <nav class="bg-violet-800">
@@ -55,16 +56,10 @@ import NavbarLinks from "./NavbarLinks.astro";
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center">
-          <img
-            class="block h-8 w-auto lg:hidden"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company"
-          />
-          <img
-            class="hidden h-8 w-auto lg:block"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company"
-          />
+          <!-- TODO: Review this - I don't see why both logos are needed. -->
+          <!-- <img class="block h-8 w-auto lg:hidden" src={Logo} alt="Nicholas Nassar" />
+          <img class="hidden h-8 w-auto lg:block" src={Logo} alt="Nicholas Nassar" /> -->
+          <img class="h-8 w-auto" src={Logo} alt="Nicholas Nassar" />
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
