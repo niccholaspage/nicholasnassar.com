@@ -2,18 +2,30 @@
 import { positions } from "../../data/positions";
 ---
 
-{
-  positions.map((position) => (
-    <>
-      <p>
-        {position.title} at {position.company}
-      </p>
-      <p>{position.time_period}</p>
-      <ul>
-        {position.bullet_points.map((bullet_point) => (
-          <li>{bullet_point}</li>
-        ))}
-      </ul>
-    </>
-  ))
-}
+<div class="grid grid-cols-3 gap-3">
+  {
+    positions.map((position, i) => {
+      const classes = ["text-center"];
+
+      if (i === 1) {
+        classes.push("border-solid", "border-x-3", "mb-4", "border-violet-500", "-skew-x-6");
+      }
+
+      const innerDivClasses = i === 1 ? "skew-x-6" : "";
+      return (
+        <div class={classes.join(" ")}>
+          <div class={innerDivClasses}>
+            <p class="text-2xl">{position.title}</p>
+            <p class="text-xl mb-4">{position.company}</p>
+            <p>{position.time_period}</p>
+            <ul>
+              {position.bullet_points.map((bullet_point) => (
+                <li>{bullet_point}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

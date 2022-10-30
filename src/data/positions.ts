@@ -9,7 +9,7 @@ const positions: Position[] = [
     title: "Frontend Developer",
     company: "Excel",
     time_period: "October 2021 - Present",
-    bullet_points: ["Test 1", "Test 2"],
+    bullet_points: ["Test 1", "Test 2", "Test 2", "Test 4", "Test 5"],
   },
   {
     title: "Software Engineer",
