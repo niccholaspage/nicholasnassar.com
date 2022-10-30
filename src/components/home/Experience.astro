@@ -9,6 +9,14 @@ import { positions } from "../../data/positions";
 
       if (i === 1) {
         classes.push(
+          "before:content-['']",
+          "before:w-1",
+          "before:bg-violet-500",
+          "before:h-[90%]",
+          "before:absolute",
+          "before:top-[5%]",
+          "before:left-0",
+          "before:-skew-x-6",
           "after:content-['']",
           "after:w-1",
           "after:bg-violet-500",
@@ -22,10 +30,10 @@ import { positions } from "../../data/positions";
       return (
         <div class={classes.join(" ")}>
           <p class="text-center text-2xl">{position.title}</p>
-          <p class="text-center text-xl mb-4">{position.company}</p>
-          <div class="px-5">
-            <p>{position.time_period}</p>
-            <ul>
+          <p class="text-center text-xl">{position.company}</p>
+          <p class="text-center text-lg mb-4">{position.time_period}</p>
+          <div class="px-10">
+            <ul class="list-disc">
               {position.bullet_points.map((bullet_point) => (
                 <li>{bullet_point}</li>
               ))}
