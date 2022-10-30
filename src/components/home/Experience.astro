@@ -5,16 +5,23 @@ import { positions } from "../../data/positions";
 <div id="experience" class="grid grid-cols-3 gap-3">
   {
     positions.map((position, i) => {
-      const classes = ["text-center"];
+      const classes = ["text-center", "relative"];
 
       if (i === 1) {
-        classes.push("border-solid", "border-x-3", "mb-4", "border-violet-500", "-skew-x-6");
+        classes.push(
+          "after:content-['']",
+          "after:w-1",
+          "after:bg-violet-500",
+          "after:h-[90%]",
+          "after:absolute",
+          "after:top-[5%]",
+          "after:right-0",
+          "after:-skew-x-6"
+        );
       }
-
-      const innerDivClasses = i === 1 ? "skew-x-6" : "";
       return (
         <div class={classes.join(" ")}>
-          <div class={innerDivClasses}>
+          <div>
             <p class="text-2xl">{position.title}</p>
             <p class="text-xl mb-4">{position.company}</p>
             <p>{position.time_period}</p>

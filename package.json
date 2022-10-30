@@ -10,13 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.5.2"
+    "@astrojs/tailwind": "^2.1.1",
+    "astro": "^1.5.2",
+    "tailwindcss": "^3.0.24"
   },
   "devDependencies": {
-    "@unocss/preset-uno": "^0.45.30",
-    "@unocss/reset": "^0.45.30",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.7.0",
-    "unocss": "^0.45.30"
+    "prettier-plugin-astro": "^0.7.0"
   }
 }
