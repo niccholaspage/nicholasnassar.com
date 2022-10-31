@@ -1,0 +1,39 @@
+---
+import EnvelopeFill from "../../images/icons/envelope-fill.svg?raw";
+import LinkedIn from "../../images/icons/linkedin.svg?raw";
+import GitHub from "../../images/icons/github.svg?raw";
+
+interface SocialIcon {
+  href: string;
+  src: string;
+}
+
+const socialIcons: SocialIcon[] = [
+  {
+    href: "https://github.com/niccholaspage",
+    src: GitHub,
+  },
+  {
+    href: "https://www.linkedin.com/in/nicholasnassar/",
+    src: LinkedIn,
+  },
+  {
+    href: "mailto:nicholas@nicholasnassar.com",
+    src: EnvelopeFill,
+  },
+];
+---
+
+<div class="sticky left-8 bottom-8 text-violet-700 inline-flex gap-1">
+  {
+    socialIcons.map((socialIcon) => (
+      <a
+        class="hover:text-violet-600 px-1"
+        href={socialIcon.href}
+        target={socialIcon.href.startsWith("https") ? "_blank" : "_self"}
+      >
+        <Fragment set:html={socialIcon.src} />
+      </a>
+    ))
+  }
+</div>
