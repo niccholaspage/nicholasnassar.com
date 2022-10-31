@@ -78,7 +78,7 @@ var a = "global a";
 // Output:
 // outer a
 // outer b
-//outer a
+// outer a
     `.trim(),
     description: [
       "An implementation of the tree-walk interpreter from the Crafting Interpreters book in Rust.",
