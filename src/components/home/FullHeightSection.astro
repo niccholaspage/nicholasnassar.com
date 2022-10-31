@@ -1,6 +1,11 @@
 ---
+interface Props {
+  id?: string;
+}
+
+const { id } = Astro.props;
 ---
 
-<div class="h-screen flex justify-center items-center">
+<div id={id} class="h-screen flex justify-center items-center">
   <slot />
 </div>
