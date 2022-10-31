@@ -2,10 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Experience from "../components/home/Experience.astro";
 import Projects from "../components/home/Projects.astro";
+import FullHeightSection from "../components/home/FullHeightSection.astro";
 ---
 
 <BaseLayout>
-  <div class="h-screen flex justify-center items-center">
+  <FullHeightSection>
     <div class="text-center">
       <!-- <h1 class="text-4xl">Nicholas Nassar</h1> -->
       <img class="mx-auto rounded-full mb-5" src="https://via.placeholder.com/250" width="250" height="250" />
@@ -18,7 +19,11 @@ import Projects from "../components/home/Projects.astro";
         </p>
       </div>
     </div>
-  </div>
-  <Experience />
-  <Projects />
+  </FullHeightSection>
+  <FullHeightSection>
+    <Experience />
+  </FullHeightSection>
+  <FullHeightSection>
+    <Projects />
+  </FullHeightSection>
 </BaseLayout>
