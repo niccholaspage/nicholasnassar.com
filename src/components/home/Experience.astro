@@ -2,45 +2,48 @@
 import { positions } from "../../data/positions";
 ---
 
-<div id="experience" class="grid grid-cols-3 gap-3">
-  {
-    positions.map((position, i) => {
-      const classes = ["relative"];
-
-      if (i === 1) {
-        classes.push(
-          "before:content-['']",
-          "before:w-1",
-          "before:bg-violet-500",
-          "before:h-[75%]",
-          "before:absolute",
-          "before:top-[20%]",
-          "before:left-0",
-          "before:-skew-x-6",
-          "after:content-['']",
-          "after:w-1",
-          "after:bg-violet-500",
-          "after:h-[75%]",
-          "after:absolute",
-          "after:top-[20%]",
-          "after:right-0",
-          "after:-skew-x-6"
-        );
-      }
-      return (
-        <div class={classes.join(" ")}>
-          <p class="text-center text-2xl">{position.title}</p>
-          <p class="text-center text-xl">{position.company}</p>
-          <p class="text-center text-lg mb-4">{position.time_period}</p>
-          <div class="px-10">
-            <ul class="list-disc">
-              {position.bullet_points.map((bullet_point) => (
-                <li>{bullet_point}</li>
-              ))}
-            </ul>
+<div id="experience">
+  <h3 class="text-center text-4xl mb-5">Experience</h3>
+  <div class="grid grid-cols-3 gap-3">
+    {
+      positions.map((position, i) => {
+        const classes = ["px-12", "relative"];
+  
+        if (i === 1) {
+          classes.push(
+            "before:content-['']",
+            "before:w-1",
+            "before:bg-violet-500",
+            "before:h-full",
+            "before:absolute",
+            "before:top-0",
+            "before:left-0",
+            "before:-skew-x-6",
+            "after:content-['']",
+            "after:w-1",
+            "after:bg-violet-500",
+            "after:h-full",
+            "after:absolute",
+            "after:top-0",
+            "after:right-0",
+            "after:-skew-x-6"
+          );
+        }
+        return (
+          <div>
+            <p class="text-center text-2xl">{position.title}</p>
+            <p class="text-center text-xl">{position.company}</p>
+            <p class="text-center text-lg mb-4">{position.time_period}</p>
+            <div class={classes.join(" ")}>
+              <ul class="list-disc">
+                {position.bullet_points.map((bullet_point) => (
+                  <li>{bullet_point}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      );
-    })
-  }
+        );
+      })
+    }
+  </div>
 </div>
