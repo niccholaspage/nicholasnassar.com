@@ -93,9 +93,9 @@ var a = "global a";
     imageUrl: "",
     description: [
       "The site you are currently on, built with Astro, TailwindCSS, and TypeScript.",
-      "I love Astro since its island architecture and partial hydration allow for this site",
-      "to be mostly static save for some interactive components, like the top menu on mobile.",
-      "This results in a small amount of JS being shipped to the client and",
+      "Astro is great for static sites. Its island architecture and partial hydration allow",
+      "for this site to be mostly static, save for some interactive components, like the top menu",
+      "on mobile. This results in a small amount of JS being shipped to the client and",
       "perfect Lighthouse scores, while still being an incredible developer experience.",
     ].join(" "),
   },
