@@ -1,0 +1,10 @@
+name: Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container:
+      image: node:18.12.0
+    steps:
+      - run: pnpm install
+      - run: pnpm build
