@@ -2,6 +2,7 @@ import type { Lang } from "shiki";
 
 interface BaseProject {
   name: string;
+  href: string;
   language: string;
   description: string;
 }
@@ -20,6 +21,7 @@ type Project = ImageProject | CodeProject;
 const projects: Project[] = [
   {
     name: "DSL Builder",
+    href: "https://github.com/niccholaspage/rusty-lox",
     codeLanguage: "kotlin",
     codeSample: `
 @GenerateBuilder
@@ -46,6 +48,17 @@ fun main() {
       "Square's KotlinPoet library is used to generate builders in Kotlin code for annotated classes.",
       "Using DSL Builder reduced boilerplate code by 95% in a dependent project through removal of repetitive DSL code.",
       "On every commit to the main branch of the GitHub project, GitHub Actions automatically builds and publishes updated Maven packages.",
+    ].join(" "),
+  },
+  {
+    name: "Rusty Lox",
+    href: "https://github.com/niccholaspage/rusty-lox",
+    language: "Rust",
+    imageUrl: "",
+    description: [
+      "An implementation of the tree-walk interpreter from the Crafting Interpreters book in Rust.",
+      "The goal is to finish up the interpreter and end up with an implementation of the interpreter",
+      "that matches one to one in functionality with the Java version written in the book and passes all tests.",
     ].join(" "),
   },
 ];

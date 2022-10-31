@@ -7,10 +7,12 @@ import { Code } from "astro/components";
   <h3 class="text-center text-4xl mb-5">Projects</h3>
   {
     projects.map((project) => (
-      <div class="grid grid-cols-2 gap-4">
+      <div class="mb-4 grid grid-cols-2 gap-4">
         <div>
           <p class="text-2xl mb-2">
-            {project.name} ({project.language})
+            {/* prettier-ignore */}
+            <a class="text-violet-500 hover:text-violet-400 underline" href={project.href} target="_blank">{project.name}</a>
+            <span>({project.language})</span>
           </p>
           <p>{project.description}</p>
         </div>
