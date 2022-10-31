@@ -4,29 +4,29 @@ import { positions } from "../../data/positions";
 
 <div>
   <h3 class="text-center text-4xl mb-5">Experience</h3>
-  <div class="grid grid-cols-3 gap-3">
+  <div class="md:grid md:grid-cols-3 md:gap-3">
     {
       positions.map((position, i) => {
-        const classes = ["px-14", "relative"];
+        const classes = ["px-4", "md:px-14", "md:relative"];
 
         if (i === 1) {
           classes.push(
-            "before:content-['']",
-            "before:w-1",
-            "before:bg-violet-500",
-            "before:h-full",
-            "before:absolute",
-            "before:top-0",
-            "before:left-0",
-            "before:-skew-x-6",
-            "after:content-['']",
-            "after:w-1",
-            "after:bg-violet-500",
-            "after:h-full",
-            "after:absolute",
-            "after:top-0",
-            "after:right-0",
-            "after:-skew-x-6"
+            "md:before:content-['']",
+            "md:before:w-1",
+            "md:before:bg-violet-500",
+            "md:before:h-full",
+            "md:before:absolute",
+            "md:before:top-0",
+            "md:before:left-0",
+            "md:before:-skew-x-6",
+            "md:after:content-['']",
+            "md:after:w-1",
+            "md:after:bg-violet-500",
+            "md:after:h-full",
+            "md:after:absolute",
+            "md:after:top-0",
+            "md:after:right-0",
+            "md:after:-skew-x-6"
           );
         }
         return (
