@@ -1,4 +1,6 @@
-import type { Lang } from "shiki";
+import type { Lang, ILanguageRegistration } from "shiki";
+
+import LoxLanguageGrammar from "../tm-langs/lox.tmLanguage.json";
 
 interface BaseProject {
   name: string;
@@ -13,7 +15,7 @@ interface ImageProject extends BaseProject {
 
 interface CodeProject extends BaseProject {
   codeSample: string;
-  codeLanguage: Lang;
+  codeLanguage: Lang | ILanguageRegistration;
 }
 
 type Project = ImageProject | CodeProject;
@@ -54,11 +56,47 @@ fun main() {
     name: "Rusty Lox",
     href: "https://github.com/niccholaspage/rusty-lox",
     language: "Rust",
-    imageUrl: "",
+    codeLanguage: {
+      id: "lox",
+      scopeName: "source.lox",
+      grammar: LoxLanguageGrammar as any,
+      aliases: [],
+    },
+    codeSample: `
+// Still working on control flow
+// so nothing too crazy here yet :)
+var a = "global a";
+{
+  var a = "outer a";
+  var b = "outer b";
+  {
+    print a;
+    print b;
+  }
+  print a;
+}
+// Output:
+// outer a
+// outer b
+//outer a
+    `.trim(),
     description: [
       "An implementation of the tree-walk interpreter from the Crafting Interpreters book in Rust.",
       "The goal is to finish up the interpreter and end up with an implementation of the interpreter",
       "that matches one to one in functionality with the Java version written in the book and passes all tests.",
+    ].join(" "),
+  },
+  {
+    name: "www.nicholasnassar.com",
+    href: "https://github.com/niccholaspage/nicholasnassar.com",
+    language: "TypeScript",
+    imageUrl: "",
+    description: [
+      "The site you are currently on, built with Astro, TailwindCSS, and TypeScript.",
+      "I love Astro since its island architecture and partial hydration allow for this site",
+      "to be mostly static save for some interactive components, like the top menu on mobile.",
+      "This results in a small amount of JS being shipped to the client and",
+      "perfect Lighthouse scores, while still being an incredible developer experience.",
     ].join(" "),
   },
 ];
