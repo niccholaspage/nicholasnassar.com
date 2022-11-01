@@ -4,29 +4,29 @@ import { positions } from "../../data/positions";
 
 <div>
   <h3 class="text-center text-4xl mb-5">Experience</h3>
-  <div class="md:grid md:grid-cols-3 md:gap-3">
+  <div class="lg:grid lg:grid-cols-3 lg:gap-3">
     {
       positions.map((position, i) => {
-        const classes = ["px-4", "md:px-14", "md:relative"];
+        const classes = ["px-4", "lg:px-14", "lg:relative"];
 
         if (i === 1) {
           classes.push(
-            "md:before:content-['']",
-            "md:before:w-1",
-            "md:before:bg-violet-500",
-            "md:before:h-full",
-            "md:before:absolute",
-            "md:before:top-0",
-            "md:before:left-0",
-            "md:before:-skew-x-6",
-            "md:after:content-['']",
-            "md:after:w-1",
-            "md:after:bg-violet-500",
-            "md:after:h-full",
-            "md:after:absolute",
-            "md:after:top-0",
-            "md:after:right-0",
-            "md:after:-skew-x-6"
+            "lg:before:content-['']",
+            "lg:before:w-1",
+            "lg:before:bg-violet-500",
+            "lg:before:h-full",
+            "lg:before:absolute",
+            "lg:before:top-0",
+            "lg:before:left-0",
+            "lg:before:-skew-x-6",
+            "lg:after:content-['']",
+            "lg:after:w-1",
+            "lg:after:bg-violet-500",
+            "lg:after:h-full",
+            "lg:after:absolute",
+            "lg:after:top-0",
+            "lg:after:right-0",
+            "lg:after:-skew-x-6"
           );
         }
         return (
