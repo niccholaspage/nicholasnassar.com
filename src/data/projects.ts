@@ -90,9 +90,22 @@ var a = "global a";
     name: "www.nicholasnassar.com",
     href: "https://github.com/niccholaspage/nicholasnassar.com",
     language: "TypeScript",
-    imageUrl: "",
+    codeLanguage: "typescript",
+    codeSample: `
+import { Component } from "solid-js";
+import { isMobileMenuOpen, setMobileMenuOpen } from "./MobileMenuState";
+
+export const MobileMenu: Component<MobileMenuProps> = (props) => {
+  const classes = () => (isMobileMenuOpen() ? "sm:hidden" : "hidden");
+  return (
+    <div class={classes()} id="mobile-menu">
+      {props.children}
+    </div>
+  );
+};    
+    `.trim(),
     description: [
-      "The site you are currently on, built with Astro, TailwindCSS, and TypeScript.",
+      "The site you are currently on, built with <a>Astro</a>, Solid, TailwindCSS, and TypeScript.",
       "Astro is great for static sites. Its island architecture and partial hydration allow",
       "for this site to be mostly static, save for some interactive components, like the top menu",
       "on mobile. This results in a small amount of JS being shipped to the client and",

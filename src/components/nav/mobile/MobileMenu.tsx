@@ -1,4 +1,4 @@
-import { Component, onCleanup, onMount } from "solid-js";
+import { type Component, onCleanup, onMount } from "solid-js";
 import { isMobileMenuOpen, setMobileMenuOpen } from "./MobileMenuState";
 
 interface MobileMenuProps {
