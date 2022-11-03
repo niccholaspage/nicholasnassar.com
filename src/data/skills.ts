@@ -175,5 +175,10 @@ const skills: Skill[] = [
     image: "webpack",
     link: "https://webpack.js.org/",
   },
+  {
+    name: "Vite",
+    image: "vite",
+    link: "https://vitejs.dev/",
+  },
 ];
 export { skills };
