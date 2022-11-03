@@ -17,7 +17,7 @@ const skillsWithIcons = await Promise.all(
     {
       skillsWithIcons.map((skill) => (
         <div class="w-[var(--s)] m-[var(--m)] h-[calc(var(--s)*1.1547)] inline-block text-[length:initial] mb-[calc(var(--m)_-_var(--s)*0.2885)]">
-          <a href={skill.link} title={skill.name}>
+          <a href={skill.link} target="_blank" title={skill.name}>
             <img src={skill.image} />
           </a>
         </div>
