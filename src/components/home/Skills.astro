@@ -10,13 +10,17 @@ const skillsWithIcons = await Promise.all(
 );
 ---
 
-<div class="max-w-lg flex [--s:64px] [--m:4px] [--f:calc(1.732_*_var(--s)_+_4_*_var(--m)_-_1px)]">
+<div class="max-w-lg flex [--s:64px] [--m:7px] [--f:calc(1.732_*_var(--s)_+_4_*_var(--m)_-_1px)]">
   <div
     class="text-[0] before:content-[''] before:w-[calc(var(--s)/2_+_var(--m))] before:float-left before:h-[120%] before:[shape-outside:repeating-linear-gradient(#0000_0_calc(var(--f)_-_3px),_#000_0_var(--f))]"
   >
     {
       skillsWithIcons.map((skill) => (
-        <div class="[clip-path:polygon(0%_25%,_0%_75%,_50%_100%,_100%_75%,_100%_25%,_50%_0%)] w-[var(--s)] m-[var(--m)] h-[calc(var(--s)*1.1547)] inline-block text-[length:initial] bg-red-200 mb-[calc(var(--m)_-_var(--s)*0.2885)]" />
+        <div class="w-[var(--s)] m-[var(--m)] h-[calc(var(--s)*1.1547)] inline-block text-[length:initial] mb-[calc(var(--m)_-_var(--s)*0.2885)]">
+          <a href={skill.link} title={skill.name}>
+            <img src={skill.image} />
+          </a>
+        </div>
       ))
     }
   </div>
