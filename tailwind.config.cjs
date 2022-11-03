@@ -1,4 +1,4 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
             "border-color": "transparent",
           },
           "50%": {
-            "border-color": "orange",
+            "border-color": colors.violet[500],
           },
         },
       },
