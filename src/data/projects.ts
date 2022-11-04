@@ -87,7 +87,7 @@ var a = "global a";
     ].join(" "),
   },
   {
-    name: "www.nicholasnassar.com",
+    name: "nicholasnassar.com",
     href: "https://github.com/niccholaspage/nicholasnassar.com",
     language: "TypeScript",
     codeLanguage: "typescript",
