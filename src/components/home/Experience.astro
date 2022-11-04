@@ -9,6 +9,10 @@ import { positions } from "../../data/positions";
       positions.map((position, i) => {
         const classes = ["px-4", "lg:px-14", "lg:relative"];
 
+        if (i !== 2) {
+          classes.push("mb-5", "lg:mb-0");
+        }
+
         if (i === 1) {
           classes.push(
             "lg:before:content-['']",
