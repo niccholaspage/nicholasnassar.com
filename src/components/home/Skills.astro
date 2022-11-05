@@ -10,34 +10,18 @@ const skillsWithIcons = await Promise.all(
 );
 ---
 
-<div class="max-w-lg flex [--s:64px] [--m:7px] [--f:calc(1.732_*_var(--s)_+_4_*_var(--m)_-_1px)]">
+<div class="max-w-xl flex [--s:64px] [--m:12px] [--f:calc(1.732_*_var(--s)_+_4_*_var(--m)_-_1px)]">
   <div
     class="text-[0] before:content-[''] before:w-[calc(var(--s)/2_+_var(--m))] before:float-left before:h-[120%] before:[shape-outside:repeating-linear-gradient(#0000_0_calc(var(--f)_-_3px),_#000_0_var(--f))]"
   >
     {
       skillsWithIcons.map((skill) => (
         <div class="w-[var(--s)] m-[var(--m)] h-[calc(var(--s)*1.1547)] inline-block text-[length:initial] mb-[calc(var(--m)_-_var(--s)*0.2885)]">
-          <a href={skill.link} target="_blank" title={skill.name}>
-            <img src={skill.image} />
+          <a class="group" href={skill.link} target="_blank" title={skill.name}>
+            <img class="group-hover:scale-125 ease-in-out duration-200" src={skill.image} />
           </a>
         </div>
       ))
     }
   </div>
 </div>
-<!-- <div>
-  <h3 class="text-center text-4xl mb-5">Skills</h3>
-  <div class="grid grid-cols-7 gap-4">
-    {
-      skillsWithIcons.map((skill) => {
-        return (
-          <div class="w-16">
-            <a href={skill.link} title={skill.name}>
-              <img src={skill.image} />
-            </a>
-          </div>
-        );
-      })
-    }
-  </div>
-</div> -->
