@@ -24,11 +24,13 @@ const socialIcons: SocialIcon[] = [
 ];
 ---
 
-<div class="sticky left-8 bottom-8 text-violet-700 inline-flex gap-1">
+<div
+  class="fixed right-2 top-6 sm:right-[unset] sm:top-[unset] text-violet-400 z-50 sm:left-8 sm:bottom-8 sm:text-violet-700 inline-flex gap-1"
+>
   {
     socialIcons.map((socialIcon) => (
       <a
-        class="hover:text-violet-600 px-1"
+        class="hover:text-violet-200 sm:hover:text-violet-600 px-1"
         href={socialIcon.href}
         target={socialIcon.href.startsWith("https") ? "_blank" : "_self"}
       >
