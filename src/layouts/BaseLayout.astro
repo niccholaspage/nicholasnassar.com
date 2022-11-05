@@ -12,11 +12,49 @@ import Navbar from "../components/nav/Navbar.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Nicholas Nassar</title>
   </head>
-  <body class="bg-zinc-200 dark:bg-zinc-900 dark:text-white">
-    <Navbar />
+  <body class="bg-zinc-200 dark:bg-zinc-900 dark:text-white pt-16">
+    <header>
+      <Navbar />
+    </header>
     <div class="container mx-auto px-4">
       <slot />
     </div>
     <SocialLinks />
+    <script>
+      const header = document.querySelector("[data-header]") as HTMLElement;
+      const headerLinks = [...document.querySelectorAll("[data-header-link]")] as HTMLAnchorElement[];
+      const sections = [...document.querySelectorAll("[data-section]")];
+
+      const options: IntersectionObserverInit = {
+        root: null,
+        rootMargin: `${header.offsetHeight * -1}px`,
+        threshold: 0,
+      };
+
+      const callback: IntersectionObserverCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            for (const link of headerLinks) {
+              if (link.href === target.id) {
+                link.setAttribute("aria-current", "page");
+                link.classList.add("bg-violet-900", "text-white");
+                link.classList.remove("text-violet-300", "hover:bg-violet-700", "hover:text-white");
+              } else {
+                link.removeAttribute("aria-current");
+                link.classList.remove("bg-violet-900", "text-white");
+                link.classList.add("text-violet-300", "hover:bg-violet-700", "hover:text-white");
+              }
+            }
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(callback, options);
+
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
   </body>
 </html>
