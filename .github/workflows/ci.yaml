@@ -17,3 +17,10 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Build site
         run: pnpm build
+      - name: Purge Cloudflare cache
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
+          -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
+          -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          --data '{"purge_everything":true}'
