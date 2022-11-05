@@ -36,7 +36,8 @@ import Navbar from "../components/nav/Navbar.astro";
           if (entry.isIntersecting) {
             const target = entry.target;
             for (const link of headerLinks) {
-              if (link.href === target.id) {
+              const linkHref = link.getAttribute("href");
+              if ((linkHref === "#" && target.id === "") || linkHref === `#${target.id}`) {
                 link.setAttribute("aria-current", "page");
                 link.classList.add("bg-violet-900", "text-white");
                 link.classList.remove("text-violet-300", "hover:bg-violet-700", "hover:text-white");
