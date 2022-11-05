@@ -92,7 +92,7 @@ var a = "global a";
     language: "TypeScript",
     codeLanguage: "typescript",
     codeSample: `
-import { Component } from "solid-js";
+import type { Component } from "solid-js";
 import { isMobileMenuOpen, setMobileMenuOpen } from "./MobileMenuState";
 
 export const MobileMenu: Component<MobileMenuProps> = (props) => {
