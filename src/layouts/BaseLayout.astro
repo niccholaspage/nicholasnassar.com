@@ -1,6 +1,12 @@
 ---
 import SocialLinks from "../components/home/SocialLinks.astro";
 import Navbar from "../components/nav/Navbar.astro";
+
+interface Props {
+  metaDescription: string;
+}
+
+const { metaDescription } = Astro.props;
 ---
 
 <html lang="en" class="scroll-pt-16 scroll-smooth">
@@ -10,8 +16,9 @@ import Navbar from "../components/nav/Navbar.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Nicholas Nassar</title>
-  </head>
+    <meta name="description" content={metaDescription} />
+  </head>Nicholas Nassar
+
   <body class="bg-zinc-200 dark:bg-zinc-900 dark:text-white pt-16">
     <header>
       <Navbar />
@@ -31,7 +38,7 @@ import Navbar from "../components/nav/Navbar.astro";
         threshold: 0.5,
       };
 
-      const callback: IntersectionObserverCallback = (entries, observer) => {
+      const callback: IntersectionObserverCallback = (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const target = entry.target;
@@ -58,4 +65,6 @@ import Navbar from "../components/nav/Navbar.astro";
       });
     </script>
   </body>
+
+
 </html>

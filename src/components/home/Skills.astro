@@ -18,7 +18,7 @@ const skillsWithIcons = await Promise.all(
       skillsWithIcons.map((skill) => (
         <div class="w-[var(--s)] m-[var(--m)] h-[calc(var(--s)*1.1547)] inline-block text-[length:initial] mb-[calc(var(--m)_-_var(--s)*0.2885)]">
           <a class="group" href={skill.link} target="_blank" title={skill.name}>
-            <img class="group-hover:scale-125 ease-in-out duration-200" src={skill.image} />
+            <img alt={`${skill.name} logo`} class="group-hover:scale-125 ease-in-out duration-200" src={skill.image} />
           </a>
         </div>
       ))
