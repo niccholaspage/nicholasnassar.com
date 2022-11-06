@@ -11,11 +11,10 @@ import SocialLinks from "../home/SocialLinks.astro";
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
         <!-- TODO: Optimize this and other components to only hydrate on mobile -->
-        <MobileMenuButton client:load>
+        <MobileMenuButton client:only="solid">
           <span class="sr-only">Open main menu</span>
-          <MobileMenuIcon client:load />
+          <MobileMenuIcon client:only="solid" />
         </MobileMenuButton>
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
@@ -34,7 +33,6 @@ import SocialLinks from "../home/SocialLinks.astro";
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
   <MobileMenu client:load>
     <div class="space-y-1 px-2 pt-2 pb-3">
       <NavbarLinks mobile={true} />
