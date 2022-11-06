@@ -10,8 +10,12 @@ export const MobileMenu: Component<MobileMenuProps> = (props) => {
 
   // We need to close the menu when the user
   // clicks on one of the items in the menu.
-  const handleItemClick = () => {
-    setMobileMenuOpen(false);
+  const handleItemClick = (event: MouseEvent) => {
+    const target = event.target;
+
+    if (target !== null && target instanceof HTMLElement && target.hasAttribute("data-mobile-link")) {
+      setMobileMenuOpen(false);
+    }
   };
 
   onMount(() => {
