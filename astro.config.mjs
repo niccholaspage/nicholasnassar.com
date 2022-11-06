@@ -3,5 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import solidJs from "@astrojs/solid-js";
 
 export default defineConfig({
-  integrations: [tailwind(), solidJs()]
+  site: "https://www.nicholasnassar.com",
+  integrations: [tailwind(), solidJs()],
 });
