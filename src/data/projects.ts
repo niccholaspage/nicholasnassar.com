@@ -105,7 +105,7 @@ export const MobileMenu: Component<MobileMenuProps> = (props) => {
 };    
     `.trim(),
     description: [
-      "The site you are currently on, built with <a>Astro</a>, Solid, TailwindCSS, and TypeScript.",
+      "The site you are currently on, built with Astro, Solid, TailwindCSS, and TypeScript.",
       "Astro is great for static sites. Its island architecture and partial hydration allow",
       "for this site to be mostly static, save for some interactive components, like the top menu",
       "on mobile. This results in a small amount of JS being shipped to the client and",
