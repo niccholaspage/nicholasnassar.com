@@ -28,7 +28,10 @@ const { metaDescription } = Astro.props;
     </div>
     <script>
       const header = document.querySelector("[data-header]") as HTMLElement;
-      const headerLinks = [...document.querySelectorAll("[data-header-link]")] as HTMLAnchorElement[];
+      const headerLinks = [
+        ...document.querySelectorAll("[data-header-link]:not([data-mobile-link])"),
+      ] as HTMLAnchorElement[];
+
       const sections = [...document.querySelectorAll("[data-section]")];
 
       const options: IntersectionObserverInit = {
