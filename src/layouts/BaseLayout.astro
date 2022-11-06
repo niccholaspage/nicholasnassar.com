@@ -1,5 +1,4 @@
 ---
-import SocialLinks from "../components/home/SocialLinks.astro";
 import Navbar from "../components/nav/Navbar.astro";
 
 interface Props {
@@ -27,7 +26,6 @@ const { metaDescription } = Astro.props;
     <div class="container mx-auto px-4">
       <slot />
     </div>
-    <SocialLinks />
     <script>
       const header = document.querySelector("[data-header]") as HTMLElement;
       const headerLinks = [...document.querySelectorAll("[data-header-link]")] as HTMLAnchorElement[];
