@@ -1,15 +1,12 @@
 import type { Component } from "solid-js";
+import { MobileMenuIcon } from "./MobileMenuIcon";
 import { setMobileMenuOpen } from "./MobileMenuState";
-
-interface MobileMenuButtonProps {
-  children: any;
-}
 
 function toggleMenu() {
   setMobileMenuOpen((menuState) => !menuState);
 }
 
-export const MobileMenuButton: Component<MobileMenuButtonProps> = (props) => {
+export const MobileMenuButton: Component = () => {
   return (
     <button
       onClick={toggleMenu}
@@ -18,7 +15,8 @@ export const MobileMenuButton: Component<MobileMenuButtonProps> = (props) => {
       aria-controls="mobile-menu"
       aria-expanded="false"
     >
-      {props.children}
+      <span class="sr-only">Open main menu</span>
+      <MobileMenuIcon />
     </button>
   );
 };

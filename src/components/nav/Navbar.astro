@@ -2,7 +2,6 @@
 import NavbarLinks from "./NavbarLinks.astro";
 import Logo from "../../images/logo.svg";
 import { MobileMenuButton } from "./mobile/MobileMenuButton";
-import { MobileMenuIcon } from "./mobile/MobileMenuIcon";
 import { MobileMenu } from "./mobile/MobileMenu";
 import SocialLinks from "../home/SocialLinks.astro";
 ---
@@ -12,10 +11,7 @@ import SocialLinks from "../home/SocialLinks.astro";
     <div class="relative flex h-16 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- TODO: Optimize this and other components to only hydrate on mobile -->
-        <MobileMenuButton client:only="solid">
-          <span class="sr-only">Open main menu</span>
-          <MobileMenuIcon client:only="solid" />
-        </MobileMenuButton>
+        <MobileMenuButton client:load />
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center">
