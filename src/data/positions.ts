@@ -17,7 +17,7 @@ const positions: Position[] = [
     ],
   },
   {
-    title: "Lead Software Engineer",
+    title: "Senior Software Engineer",
     company: "Oriental Rug Gallery",
     time_period: "June 2015 - Present",
     bullet_points: [
