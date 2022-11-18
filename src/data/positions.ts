@@ -6,7 +6,7 @@ interface Position {
 }
 const positions: Position[] = [
   {
-    title: "Frontend Developer",
+    title: "Frontend Engineer",
     company: "Excel",
     time_period: "October 2021 - Present",
     bullet_points: [
