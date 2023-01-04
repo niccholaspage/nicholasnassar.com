@@ -11,7 +11,7 @@ const positions: Position[] = [
     time_period: "October 2021 - Present",
     bullet_points: [
       "Created a static site generator and compiler allowing creation of site widgets through a schema that is then transformed into valid TypeScript code, compiled through Vite, and embedded into 20+ sites.",
-      "Implemented automated site QA process with Playwright as part of CI/CD pipelines across 25+ websites, performing end to end testing of all site functionality on every single deployment as well as on a routine basis.",
+      "Implemented automated site QA process with Playwright as part of CI/CD pipelines across 25+ websites, performing end to end testing of all site functionality on every deployment as well as on a routine basis.",
       "Developed extensive rework of automated CI/CD pipelines for site deployments, greatly improving site stability.",
       "Heavily improved Core Web Vitals and other related metrics for numerous sites with self-developed tooling for speed analysis, allowing sites to pass and exceed Google's Core Web Vitals assessment.",
     ],
