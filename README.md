@@ -2,7 +2,7 @@
 
 Personal website to show job experience, skills and projects, as well as a cool blog.
 
-Created using Typescript, Astro, and Tailwind CSS.
+Created using Astro, Solid, Tailwind CSS, and TypeScript.
 
 ## 🧞 Commands
 
