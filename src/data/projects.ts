@@ -38,10 +38,13 @@ fun main() {
         lastName = "Nassar"
 
         pet {
-            name = "ZuZu"
-            breed = "Yorkie"
+            name = "Pepper"
+            breed = "Domestic Shorthair"
         }
     }.build()
+
+    println("Hi, I'm \${person.firstName} \${person.lastName}!")
+    println("I have a cat called \${person.pet.name}!")
 }`.trim(),
     language: "Kotlin",
     description: [
@@ -49,7 +52,7 @@ fun main() {
       "It utilizes Google's Kotlin Symbol Processing API to hook into the Kotlin compiler to process program source code.",
       "Square's KotlinPoet library is used to generate builders in Kotlin code for annotated classes.",
       "Using DSL Builder reduced boilerplate code by 95% in a dependent project through removal of repetitive DSL code.",
-      "On every commit to the main branch of the GitHub project, GitHub Actions automatically builds and publishes updated Maven packages.",
+      "On every commit to the main branch of the GitHub project, builds are automatically published to Maven Central.",
     ].join(" "),
   },
   {
