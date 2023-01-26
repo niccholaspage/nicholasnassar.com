@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "packageManager": "pnpm@7.14.2",
+  "packageManager": "pnpm@7.26.0",
   "dependencies": {
     "@astrojs/solid-js": "^1.2.2",
     "@astrojs/tailwind": "^2.1.2",
