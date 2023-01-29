@@ -2,6 +2,7 @@ import { defineCollection, z } from "astro:content";
 
 const Tag = z.union([
   z.literal("React"),
+  z.literal("Solid"),
   z.literal("JavaScript"),
   z.literal("TypeScript"),
   z.literal("Rollup"),
