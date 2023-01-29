@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
+import { getLatestBlogPosts } from "../../content/_blog-posts";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+const posts = await getLatestBlogPosts();
 ---
 
 <BaseLayout
