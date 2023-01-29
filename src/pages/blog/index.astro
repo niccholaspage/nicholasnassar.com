@@ -8,11 +8,17 @@ const posts = await getCollection("blog");
 <BaseLayout
   metaDescription="Nicholas Nassar's personal blog. Hopefully, you can learn a few new things about the wonderful world of software development."
 >
-  {
-    posts.map((post) => {
-      const slug = post.slug;
-      const { title } = post.data;
-      return <a href={`/blog/${slug}`}>{title}</a>;
-    })
-  }
+  <ul>
+    {
+      posts.map((post) => {
+        const slug = post.slug;
+        const { title } = post.data;
+        return (
+          <li>
+            <a href={`/blog/${slug}`}>{title}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
 </BaseLayout>
