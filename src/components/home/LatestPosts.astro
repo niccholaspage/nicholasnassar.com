@@ -1,0 +1,17 @@
+---
+import { getLatestBlogPosts } from "../../content/_blog-posts";
+
+const latestPosts = (await getLatestBlogPosts()).slice(0, 3);
+---
+
+<div>
+  <div class="xl:grid xl:grid-cols-3 xl:gap-6">
+    {
+      latestPosts.map((post) => (
+        <div>
+          <span class="text-center">{post.data.title}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>
