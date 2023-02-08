@@ -7,11 +7,8 @@ const { mobile } = Astro.props;
 
 import NavbarLink from "./NavbarLink.astro";
 
-// TODO: Make NavbarLink current variable switch based on scroll position.
+const path = Astro.url.pathname;
 ---
 
-<NavbarLink mobile={mobile} href="#">Home</NavbarLink>
-<NavbarLink mobile={mobile} href="#experience">Experience</NavbarLink>
-<NavbarLink mobile={mobile} href="#skills">Skills</NavbarLink>
-<NavbarLink mobile={mobile} href="#projects">Projects</NavbarLink>
-<NavbarLink mobile={mobile} href="#latest-posts">Latest Posts</NavbarLink>
+<NavbarLink current={path === "/"} mobile={mobile} href="/">Home</NavbarLink>
+<NavbarLink current={path === "/blog"} mobile={mobile} href="/blog">Blog</NavbarLink>

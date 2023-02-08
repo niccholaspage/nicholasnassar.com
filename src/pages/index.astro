@@ -5,6 +5,7 @@ import Skills from "../components/home/Skills.astro";
 import Projects from "../components/home/Projects.astro";
 import FullHeightSection from "../components/home/FullHeightSection.astro";
 import LatestPosts from "../components/home/LatestPosts.astro";
+import MobileNavBar from "../components/home/MobileNavBar.astro";
 
 // Reference for nice typewriter effect:
 // https://css-tricks.com/snippets/css/typewriter-effect/
@@ -13,7 +14,8 @@ import LatestPosts from "../components/home/LatestPosts.astro";
 <BaseLayout
   metaDescription="Passionate, diligent, and detailed. In my eleven years of programming, I have spent my time expanding my knowledge in both frontend and backend technologies."
 >
-  <FullHeightSection>
+  <MobileNavBar />
+  <FullHeightSection title="">
     <div class="text-center">
       <div>
         <img
@@ -41,16 +43,16 @@ import LatestPosts from "../components/home/LatestPosts.astro";
       </div>
     </div>
   </FullHeightSection>
-  <FullHeightSection id="experience">
+  <FullHeightSection id="experience" title="Experience">
     <Experience />
   </FullHeightSection>
-  <FullHeightSection id="skills">
+  <FullHeightSection id="skills" title="Skills">
     <Skills />
   </FullHeightSection>
-  <FullHeightSection id="projects">
+  <FullHeightSection id="projects" title="Projects">
     <Projects />
   </FullHeightSection>
-  <FullHeightSection id="latest-posts">
+  <FullHeightSection id="latest-posts" title="Latest Posts">
     <LatestPosts />
   </FullHeightSection>
 </BaseLayout>

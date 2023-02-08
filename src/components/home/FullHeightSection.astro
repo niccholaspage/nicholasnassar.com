@@ -1,11 +1,12 @@
 ---
 interface Props {
   id?: string;
+  title: string;
 }
 
-const { id } = Astro.props;
+const { id, title } = Astro.props;
 ---
 
-<div data-section id={id} class="min-h-screen flex justify-center items-center">
+<div data-section data-title={title} id={id} class="min-h-screen flex justify-center items-center">
   <slot />
 </div>

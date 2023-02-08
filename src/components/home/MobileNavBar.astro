@@ -1,0 +1,15 @@
+---
+import RoundedButton from "../button/RoundedButton.astro";
+import ChevronRight from "../../images/icons/chevron-right.svg?raw";
+---
+
+<nav
+  id="mobile-nav-bar"
+  class="bg-zinc-200 dark:bg-zinc-900 fixed top-16 h-12 w-full -mx-4 px-4 flex flex-row items-center gap-4 border-b-2 border-b-zinc-100 dark:border-b-zinc-800"
+>
+  <RoundedButton size={"sm"}>
+    On this page
+    <Fragment set:html={ChevronRight} />
+  </RoundedButton>
+  <span id="current-section"></span>
+</nav>
