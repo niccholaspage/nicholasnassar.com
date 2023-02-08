@@ -16,9 +16,25 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
+
+const { title, publishDate } = Astro.props.data;
 const { Content } = await post.render();
 ---
 
 <BaseLayout metaDescription={post.data.description}>
+  <h1 class="mt-1 text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl lg:text-6xl">
+    {title}
+  </h1>
+  <p class="text-sm text-gray-500 dark:text-gray-200">
+    <time datetime="2020-03-16"
+      >{
+        publishDate.toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }</time
+    >
+  </p>
   <Content />
 </BaseLayout>
