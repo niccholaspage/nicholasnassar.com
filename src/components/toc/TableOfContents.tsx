@@ -1,6 +1,12 @@
 import { ChevronRight } from "../icons/ChevronRight";
 import { RoundedButtonDiv } from "../button/RoundedButton";
-import type { Component } from "solid-js";
+import { For, type Component } from "solid-js";
+import { getPageHeadings } from "../../util/page-headings";
+
+// TODO: Don't hardcode this
+const pageHeadings = getPageHeadings("/");
+
+const listItems = [...pageHeadings];
 
 export const TableOfContents: Component = () => {
   return (
@@ -17,8 +23,7 @@ export const TableOfContents: Component = () => {
           <span id="current-section"></span>
         </summary>
         <ul>
-          <li>Test test test</li>
-          <li>Test test test</li>
+          <For each={listItems}>{(item) => <li>{item}</li>}</For>
         </ul>
       </details>
     </nav>
