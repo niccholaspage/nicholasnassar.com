@@ -5,7 +5,7 @@ import Skills from "../components/home/Skills.astro";
 import Projects from "../components/home/Projects.astro";
 import FullHeightSection from "../components/home/FullHeightSection.astro";
 import LatestPosts from "../components/home/LatestPosts.astro";
-import MobileNavBar from "../components/home/MobileNavBar.astro";
+import { TableOfContents } from "../components/toc/TableOfContents";
 
 // Reference for nice typewriter effect:
 // https://css-tricks.com/snippets/css/typewriter-effect/
@@ -14,7 +14,7 @@ import MobileNavBar from "../components/home/MobileNavBar.astro";
 <BaseLayout
   metaDescription="Passionate, diligent, and detailed. In my eleven years of programming, I have spent my time expanding my knowledge in both frontend and backend technologies."
 >
-  <MobileNavBar />
+  <TableOfContents client:load />
   <FullHeightSection title="">
     <div class="text-center">
       <div>

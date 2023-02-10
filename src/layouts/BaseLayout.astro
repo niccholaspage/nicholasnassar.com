@@ -31,7 +31,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </div>
     <script>
       const header = document.querySelector("[data-header]") as HTMLElement;
-      const mobileNavBar = document.getElementById("mobile-nav-bar") as HTMLElement;
+      const tableOfContents = document.getElementById("table-of-contents") as HTMLElement;
       const headerLinks = [
         ...document.querySelectorAll("[data-header-link]:not([data-mobile-link])"),
       ] as HTMLAnchorElement[];
@@ -40,11 +40,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
       const options: IntersectionObserverInit = {
         root: null,
-        rootMargin: `${(header.offsetHeight + mobileNavBar.offsetHeight) * -1}px`,
+        rootMargin: `${(header.offsetHeight + tableOfContents.offsetHeight) * -1}px`,
         threshold: 0.1,
       };
-
-      console.log(options);
 
       const currentSection = document.getElementById("current-section")!;
 

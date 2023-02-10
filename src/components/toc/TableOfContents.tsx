@@ -1,0 +1,26 @@
+import { ChevronRight } from "../icons/ChevronRight";
+import { RoundedButtonDiv } from "../button/RoundedButton";
+import type { Component } from "solid-js";
+
+export const TableOfContents: Component = () => {
+  return (
+    <nav
+      id="table-of-contents"
+      class="bg-zinc-200 dark:bg-zinc-900 fixed top-16 w-full -mx-4 px-4 border-b-2 border-b-zinc-100 dark:border-b-zinc-800"
+    >
+      <details class="w-full py-2 flex items-center">
+        <summary class="flex items-center gap-4 marker:hidden list-none">
+          <RoundedButtonDiv size={"sm"}>
+            On this page
+            <ChevronRight />
+          </RoundedButtonDiv>
+          <span id="current-section"></span>
+        </summary>
+        <ul>
+          <li>Test test test</li>
+          <li>Test test test</li>
+        </ul>
+      </details>
+    </nav>
+  );
+};
