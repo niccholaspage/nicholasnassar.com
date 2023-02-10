@@ -1,12 +1,12 @@
 import { ChevronRight } from "../icons/ChevronRight";
 import { RoundedButtonDiv } from "../button/RoundedButton";
 import { For, type Component } from "solid-js";
-import { getPageHeadings } from "../../util/page-headings";
+import { getPageHeadings, PageHeading } from "../../util/page-headings";
 
 // TODO: Don't hardcode this
 const pageHeadings = getPageHeadings("/");
 
-const listItems = [...pageHeadings];
+const listItems = [...pageHeadings].map((item) => JSON.parse(item)) as PageHeading[];
 
 export const TableOfContents: Component = () => {
   return (
@@ -23,7 +23,13 @@ export const TableOfContents: Component = () => {
           <span id="current-section"></span>
         </summary>
         <ul>
-          <For each={listItems}>{(item) => <li>{item}</li>}</For>
+          <For each={listItems}>
+            {(item) => (
+              <li>
+                <a href={`#${item.id}`}>{item.title}</a>
+              </li>
+            )}
+          </For>
         </ul>
       </details>
     </nav>

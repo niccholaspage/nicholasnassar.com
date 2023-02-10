@@ -2,13 +2,13 @@
 import { addPageHeading } from "../../util/page-headings";
 
 interface Props {
-  id?: string;
+  id: string;
   title: string;
 }
 
 const { id, title } = Astro.props;
 
-addPageHeading(Astro.url.pathname, title);
+addPageHeading(Astro.url.pathname, id, title);
 ---
 
 <div data-section data-title={title} id={id} class="min-h-screen flex justify-center items-center">
