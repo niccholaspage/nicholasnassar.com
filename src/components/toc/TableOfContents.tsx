@@ -17,10 +17,6 @@ const pageHeadings = [
     title: "Skills",
   },
   {
-    id: "projects",
-    title: "Projects",
-  },
-  {
     id: "latest-posts",
     title: "Latest Posts",
   },

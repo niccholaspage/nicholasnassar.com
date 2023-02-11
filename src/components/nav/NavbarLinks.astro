@@ -11,4 +11,5 @@ const path = Astro.url.pathname;
 ---
 
 <NavbarLink current={path === "/"} mobile={mobile} href="/">Home</NavbarLink>
+<NavbarLink current={path === "/projects"} mobile={mobile} href="/projects">Projects</NavbarLink>
 <NavbarLink current={path === "/blog"} mobile={mobile} href="/blog">Blog</NavbarLink>
