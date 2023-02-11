@@ -4,8 +4,6 @@ import Experience from "../components/home/Experience.astro";
 import Skills from "../components/home/Skills.astro";
 import FullHeightSection from "../components/home/FullHeightSection.astro";
 import LatestPosts from "../components/home/LatestPosts.astro";
-import { TableOfContents } from "../components/toc/TableOfContents";
-
 // Reference for nice typewriter effect:
 // https://css-tricks.com/snippets/css/typewriter-effect/
 ---
@@ -13,7 +11,6 @@ import { TableOfContents } from "../components/toc/TableOfContents";
 <BaseLayout
   metaDescription="Passionate, diligent, and detailed. In my eleven years of programming, I have spent my time expanding my knowledge in both frontend and backend technologies."
 >
-  <TableOfContents client:load />
   <FullHeightSection id="" title="Intro">
     <div class="text-center">
       <div>

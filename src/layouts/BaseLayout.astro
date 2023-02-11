@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/nav/Navbar.astro";
+import { TableOfContents } from "../components/toc/TableOfContents";
 
 interface Props {
   metaDescription: string;
@@ -9,11 +10,10 @@ const { metaDescription } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-// TODO: Set scroll padding based on whether the TOC is being shown or not.
-// Either scroll-pt-16 or scroll-pt-28.
+const displayTOC = Astro.url.pathname === "/";
 ---
 
-<html lang="en" class="scroll-pt-28 scroll-smooth">
+<html lang="en" class={(displayTOC ? `scroll-pt-28` : `scroll-pt-16`) + ` scroll-smooth`}>
   <head>
     <meta charset="utf-8" />
     <link rel="canonical" href={canonicalURL} />
@@ -33,6 +33,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <header>
       <Navbar />
     </header>
+    {displayTOC && <TableOfContents client:load />}
     <div class="container mx-auto px-4">
       <slot />
     </div>
