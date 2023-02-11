@@ -36,7 +36,7 @@ export const RoundedButtonDiv: ParentComponent<RoundedButtonProps> = (props) => 
     <div
       class={`${
         SizeClasses[props.size]
-      } cursor-pointer inline-flex gap-1 items-center rounded-full border border-transparent bg-violet-600 font-medium text-white shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2`}
+      } cursor-pointer select-none inline-flex gap-1 items-center rounded-full border border-transparent bg-violet-600 font-medium text-white shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2`}
     >
       {props.children}
     </div>
