@@ -32,9 +32,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <script>
       const header = document.querySelector("[data-header]") as HTMLElement;
       const tableOfContents = document.getElementById("table-of-contents") as HTMLElement;
-      const headerLinks = [
-        ...document.querySelectorAll("[data-header-link]:not([data-mobile-link])"),
-      ] as HTMLAnchorElement[];
 
       const sections = [...document.querySelectorAll("[data-section]")];
 
@@ -50,20 +47,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         for (const entry of entries) {
           if (entry.isIntersecting) {
             const target = entry.target;
-            // TODO: Link section
-            // for (const link of headerLinks) {
-            //   const linkHref = link.getAttribute("href");
-            //   if ((linkHref === "#" && target.id === "") || linkHref === `#${target.id}`) {
-            //     link.setAttribute("aria-current", "page");
-            //     link.classList.add("bg-violet-900", "text-white");
-            //     link.classList.remove("text-violet-300", "hover:bg-violet-700", "hover:text-white");
-            //   } else {
-            //     link.removeAttribute("aria-current");
-            //     link.classList.remove("bg-violet-900", "text-white");
-            //     link.classList.add("text-violet-300", "hover:bg-violet-700", "hover:text-white");
-            //   }
-            // }
-
             currentSection.textContent = target.getAttribute("data-title");
             break;
           }
