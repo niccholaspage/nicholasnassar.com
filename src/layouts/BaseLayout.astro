@@ -29,35 +29,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <div class="container mx-auto px-4">
       <slot />
     </div>
-    <script>
-      const header = document.querySelector("[data-header]") as HTMLElement;
-      const tableOfContents = document.getElementById("table-of-contents") as HTMLElement;
-
-      const sections = [...document.querySelectorAll("[data-section]")];
-
-      const options: IntersectionObserverInit = {
-        root: null,
-        rootMargin: `${(header.offsetHeight + tableOfContents.offsetHeight) * -1}px`,
-        threshold: 0.1,
-      };
-
-      const currentSection = document.getElementById("current-section")!;
-
-      const callback: IntersectionObserverCallback = (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            const target = entry.target;
-            currentSection.textContent = target.getAttribute("data-title");
-            break;
-          }
-        }
-      };
-
-      const observer = new IntersectionObserver(callback, options);
-
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
-    </script>
   </body>
 </html>

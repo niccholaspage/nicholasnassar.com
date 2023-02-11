@@ -1,6 +1,6 @@
 import { ChevronRight } from "../icons/ChevronRight";
 import { RoundedButtonDiv } from "../button/RoundedButton";
-import { createSignal, For, type JSX, type Component } from "solid-js";
+import { createSignal, For, type JSX, type Component, onMount, onCleanup } from "solid-js";
 
 // TODO: Don't hardcode this
 const pageHeadings = [
@@ -30,6 +30,41 @@ export const TableOfContents: Component = () => {
   const [open, setOpen] = createSignal(false);
   const onToggle: JSX.EventHandler<HTMLDetailsElement, Event> = (event) => setOpen(event.currentTarget.open);
   const onLinkClick = () => setOpen(false);
+
+  onMount(() => {
+    const header = document.querySelector("[data-header]") as HTMLElement;
+    const tableOfContents = document.getElementById("table-of-contents") as HTMLElement;
+
+    const sections = [...document.querySelectorAll("[data-section]")];
+
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: `${(header.offsetHeight + tableOfContents.offsetHeight) * -1}px`,
+      threshold: 0.1,
+    };
+
+    const currentSection = document.getElementById("current-section")!;
+
+    const callback: IntersectionObserverCallback = (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          currentSection.textContent = target.getAttribute("data-title");
+          break;
+        }
+      }
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    onCleanup(() => {
+      observer.disconnect();
+    });
+  });
   return (
     <nav
       id="table-of-contents"
