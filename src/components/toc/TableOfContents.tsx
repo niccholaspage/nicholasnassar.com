@@ -31,15 +31,16 @@ export const TableOfContents: Component = () => {
   const onToggle: JSX.EventHandler<HTMLDetailsElement, Event> = (event) => setOpen(event.currentTarget.open);
   const onLinkClick = () => setOpen(false);
 
+  let navRef: HTMLElement;
+
   onMount(() => {
     const header = document.querySelector("[data-header]") as HTMLElement;
-    const tableOfContents = document.getElementById("table-of-contents") as HTMLElement;
 
     const sections = [...document.querySelectorAll("[data-section]")];
 
     const options: IntersectionObserverInit = {
       root: null,
-      rootMargin: `${(header.offsetHeight + tableOfContents.offsetHeight) * -1}px`,
+      rootMargin: `${(header.offsetHeight + navRef.offsetHeight) * -1}px`,
       threshold: 0.1,
     };
 
@@ -67,6 +68,7 @@ export const TableOfContents: Component = () => {
   });
   return (
     <nav
+      ref={navRef!}
       id="table-of-contents"
       class="bg-zinc-200 dark:bg-zinc-900 fixed top-16 w-full -mx-4 px-4 border-b-2 border-b-zinc-100 dark:border-b-zinc-800"
     >
