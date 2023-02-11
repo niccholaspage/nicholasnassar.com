@@ -72,11 +72,11 @@ export const TableOfContents: Component = () => {
       id="table-of-contents"
       class="bg-zinc-200 dark:bg-zinc-900 fixed top-16 w-full -mx-4 px-4 border-b-2 border-b-zinc-100 dark:border-b-zinc-800"
     >
-      <details open={open()} ontoggle={onToggle} class="w-full py-2 flex items-center">
+      <details open={open()} ontoggle={onToggle} class="w-full py-2 flex items-center group">
         <summary class="flex items-center gap-4 marker:hidden list-none">
           <RoundedButtonDiv size={"sm"}>
             On this page
-            <ChevronRight />
+            <ChevronRight class="group-open:rotate-90 ease-in duration-150" />
           </RoundedButtonDiv>
           <span id="current-section"></span>
         </summary>
