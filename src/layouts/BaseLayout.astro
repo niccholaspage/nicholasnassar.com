@@ -8,9 +8,12 @@ interface Props {
 const { metaDescription } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// TODO: Set scroll padding based on whether the TOC is being shown or not.
+// Either scroll-pt-16 or scroll-pt-28.
 ---
 
-<html lang="en" class="scroll-pt-16 scroll-smooth">
+<html lang="en" class="scroll-pt-28 scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="canonical" href={canonicalURL} />
