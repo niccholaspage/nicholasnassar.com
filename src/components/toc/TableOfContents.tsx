@@ -26,7 +26,9 @@ export const TableOfContents: Component = () => {
           <For each={listItems}>
             {(item) => (
               <li>
-                <a href={`#${item.id}`}>{item.title}</a>
+                <a class="inline-flex w-full py-2" href={`#${item.id}`}>
+                  {item.title}
+                </a>
               </li>
             )}
           </For>
