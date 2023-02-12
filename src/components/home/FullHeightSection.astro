@@ -5,8 +5,10 @@ interface Props {
 }
 
 const { id, title } = Astro.props;
+
+// displayTOC - Here so this gets updated as needed.
 ---
 
-<div data-section data-title={title} id={id} class="min-h-screen flex justify-center items-center">
+<div data-section data-title={title} id={id} class="min-h-[calc(100vh_-_7rem)] flex justify-center items-center">
   <slot />
 </div>
