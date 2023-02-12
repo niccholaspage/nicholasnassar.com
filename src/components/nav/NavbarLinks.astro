@@ -7,9 +7,14 @@ const { mobile } = Astro.props;
 
 import NavbarLink from "./NavbarLink.astro";
 
-const path = Astro.url.pathname;
+let path = Astro.url.pathname;
+
+// Slice off the trailing slash, if it exists.
+if (path.endsWith("/")) {
+  path = path.slice(0, -1);
+}
 ---
 
-<NavbarLink current={path === "/"} mobile={mobile} href="/">Home</NavbarLink>
+<NavbarLink current={path === ""} mobile={mobile} href="/">Home</NavbarLink>
 <NavbarLink current={path === "/projects"} mobile={mobile} href="/projects">Projects</NavbarLink>
 <NavbarLink current={path === "/blog"} mobile={mobile} href="/blog">Blog</NavbarLink>
