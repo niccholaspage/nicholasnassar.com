@@ -29,7 +29,7 @@ const displayTOC = Astro.url.pathname === "/";
     <title>Nicholas Nassar</title>
   </head>
 
-  <body class="bg-zinc-200 dark:bg-zinc-900 dark:text-white pt-16">
+  <body class={`bg-zinc-200 dark:bg-zinc-900 dark:text-white ${displayTOC ? `pt-28` : `pt-16`}`}>
     <header>
       <Navbar />
     </header>
