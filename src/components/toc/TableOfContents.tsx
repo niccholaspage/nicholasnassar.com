@@ -1,6 +1,7 @@
 import { ChevronRight } from "../icons/ChevronRight";
 import { RoundedButtonDiv } from "../button/RoundedButton";
 import { createSignal, For, type JSX, type Component, onMount, onCleanup } from "solid-js";
+import { NAV_SPACING_CLASSES } from "../../util/spacing";
 
 // TODO: Don't hardcode this
 const pageHeadings = [
@@ -66,9 +67,9 @@ export const TableOfContents: Component = () => {
     <nav
       ref={navRef!}
       id="table-of-contents"
-      class="bg-zinc-200 dark:bg-zinc-900 fixed top-16 w-full px-4 border-b-2 border-b-zinc-100 dark:border-b-zinc-800"
+      class="bg-zinc-200 dark:bg-zinc-900 fixed top-16 w-full border-b-2 border-b-zinc-100 dark:border-b-zinc-800"
     >
-      <details open={open()} ontoggle={onToggle} class="w-full py-2 flex items-center group">
+      <details open={open()} ontoggle={onToggle} class={`w-full py-2 flex items-center group ${NAV_SPACING_CLASSES}`}>
         <summary class="flex items-center gap-4 marker:hidden list-none">
           <RoundedButtonDiv size={"sm"}>
             On this page

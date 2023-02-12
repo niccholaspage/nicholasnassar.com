@@ -4,10 +4,11 @@ import Logo from "../../images/logo.svg";
 import { MobileMenuButton } from "./mobile/MobileMenuButton";
 import { MobileMenu } from "./mobile/MobileMenu";
 import SocialLinks from "../home/SocialLinks.astro";
+import { NAV_SPACING_CLASSES } from "../../util/spacing";
 ---
 
 <nav data-header class="fixed w-full top-0 z-10 bg-violet-800">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+  <div class={NAV_SPACING_CLASSES}>
     <div class="relative flex h-16 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- TODO: Optimize this and other components to only hydrate on mobile -->
