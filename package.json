@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "packageManager": "pnpm@7.26.0",
+  "packageManager": "pnpm@7.28.0",
   "dependencies": {
     "@astrojs/sitemap": "^1.1.0",
     "@astrojs/solid-js": "^2.0.2",
