@@ -4,6 +4,7 @@ import Experience from "../components/home/Experience.astro";
 import Skills from "../components/home/Skills.astro";
 import FullHeightSection from "../components/home/FullHeightSection.astro";
 import LatestPosts from "../components/home/LatestPosts.astro";
+import { Sandpack } from "../components/sandpack/Sandpack";
 // Reference for nice typewriter effect:
 // https://css-tricks.com/snippets/css/typewriter-effect/
 ---
@@ -11,6 +12,9 @@ import LatestPosts from "../components/home/LatestPosts.astro";
 <BaseLayout
   metaDescription="Passionate, diligent, and detailed. In my eleven years of programming, I have spent my time expanding my knowledge in both frontend and backend technologies."
 >
+  <FullHeightSection id="test" title="Pizza">
+    <Sandpack client:load />
+  </FullHeightSection>
   <FullHeightSection id="" title="Intro">
     <div class="text-center">
       <div>
