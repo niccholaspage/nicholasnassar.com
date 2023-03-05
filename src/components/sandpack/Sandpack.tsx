@@ -29,7 +29,7 @@ export const Sandpack: Component = () => {
   return (
     <div>
       <p>I'm a sandpack!</p>
-      <iframe ref={iframeRef!} />
+      <iframe ref={iframeRef!} title="Playground Preview" />
     </div>
   );
 };
