@@ -23,7 +23,7 @@ type Project = ImageProject | CodeProject;
 const projects: Project[] = [
   {
     name: "DSL Builder",
-    href: "https://github.com/niccholaspage/rusty-lox",
+    href: "https://github.com/niccholaspage/dsl-builder",
     codeLanguage: "kotlin",
     codeSample: `
 @GenerateBuilder
