@@ -59,6 +59,7 @@ fun main() {
     name: "Rusty Lox",
     href: "https://github.com/niccholaspage/rusty-lox",
     language: "Rust",
+    // @ts-expect-error :(
     codeLanguage: {
       id: "lox",
       scopeName: "source.lox",
