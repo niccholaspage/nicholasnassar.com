@@ -3,8 +3,5 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    // Needed to prevent errors in build due to
-    // Vite type checking failing for some reason
-    "skipLibCheck": true
   }
 }
