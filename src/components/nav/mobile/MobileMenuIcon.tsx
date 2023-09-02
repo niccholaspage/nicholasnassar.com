@@ -1,5 +1,5 @@
 import { isMobileMenuOpen } from "./MobileMenuState";
-import { Component, Show } from "solid-js";
+import { type Component, Show } from "solid-js";
 
 export const MobileMenuIcon: Component = () => {
   // When closed: Heroicon outline/bars-3
