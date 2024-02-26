@@ -1,4 +1,4 @@
-import type { Lang, ILanguageRegistration } from "shiki";
+import type { BundledLanguage, LanguageRegistration } from "shiki";
 
 import LoxLanguageGrammar from "../tm-langs/lox.tmLanguage.json";
 
@@ -15,7 +15,7 @@ interface ImageProject extends BaseProject {
 
 interface CodeProject extends BaseProject {
   codeSample: string;
-  codeLanguage: Lang | ILanguageRegistration;
+  codeLanguage: BundledLanguage | LanguageRegistration;
 }
 
 type Project = ImageProject | CodeProject;
@@ -59,11 +59,11 @@ fun main() {
     name: "Rusty Lox",
     href: "https://github.com/niccholaspage/rusty-lox",
     language: "Rust",
-    // @ts-expect-error :(
     codeLanguage: {
-      id: "lox",
+      name: "lox",
       scopeName: "source.lox",
-      grammar: LoxLanguageGrammar as any,
+      // @ts-expect-error TODO: Fix this
+      grammar: LoxLanguageGrammar,
       aliases: [],
     },
     codeSample: `
