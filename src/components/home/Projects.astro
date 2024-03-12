@@ -17,7 +17,6 @@ import { Code } from "astro/components";
           <p>{project.description}</p>
         </div>
         <div>
-          {/* @ts-expect-error - Issue with typing when passing language in */}
           {"codeSample" in project && <Code code={project.codeSample} lang={project.codeLanguage} />}
           {"imageUrl" in project && <img src={project.imageUrl} />}
         </div>
