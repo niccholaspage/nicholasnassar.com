@@ -1,6 +1,5 @@
-import type { BundledLanguage, LanguageRegistration } from "shiki";
-
 import LoxLanguageGrammar from "../tm-langs/lox.tmLanguage.json";
+import type { CodeLanguage } from "astro";
 
 interface BaseProject {
   name: string;
@@ -15,7 +14,7 @@ interface ImageProject extends BaseProject {
 
 interface CodeProject extends BaseProject {
   codeSample: string;
-  codeLanguage: BundledLanguage | LanguageRegistration;
+  codeLanguage: CodeLanguage;
 }
 
 type Project = ImageProject | CodeProject;
