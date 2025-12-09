@@ -34,7 +34,7 @@ open class Pet(val name: String, val breed: String)
 fun main() {
     val person = PersonBuilder().apply {
         firstName = "Nicholas"
-        lastName = "Nassar"
+        lastName = "Decker"
 
         pet {
             name = "Pepper"
@@ -90,8 +90,8 @@ var a = "global a";
     ].join(" "),
   },
   {
-    name: "nicholasnassar.com",
-    href: "https://github.com/niccholaspage/nicholasnassar.com",
+    name: "nicholasmdecker.com",
+    href: "https://github.com/niccholaspage/nicholasmdecker.com",
     language: "TypeScript",
     codeLanguage: "typescript",
     codeSample: `

@@ -1,4 +1,4 @@
-# Nicholas Nassar
+# Nicholas Decker
 
 Personal website to show job experience, skills and projects, as well as a cool blog.
 
