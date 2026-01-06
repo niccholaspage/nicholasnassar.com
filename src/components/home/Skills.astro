@@ -11,14 +11,14 @@ const skillsWithIcons = await Promise.all(
 ---
 
 <div
-  class="-mx-4 max-w-2xl grid [--s:44px] sm:[--s:64px] [--r:1] [--h:0.25] [--v:0.35] [--hc:calc(clamp(0,var(--h),0.5)_*_var(--s))] [--vc:calc(clamp(0,var(--v),0.5)_*_var(--s)_*_var(--r))] [--mv:12px] [--mh:calc(var(--mv)_+_(var(--s)_-_2*var(--hc))/2)] [--f:calc(2*var(--s)*var(--r)_+_4*var(--mv)_-_2*var(--vc)_-_2px)]"
+  class="-mx-4 max-w-2xl grid [--s:44px] sm:[--s:64px] [--r:1] [--h:0.25] [--v:0.35] [--hc:calc(clamp(0,var(--h),0.5)*var(--s))] [--vc:calc(clamp(0,var(--v),0.5)*var(--s)*var(--r))] [--mv:12px] [--mh:calc(var(--mv)+(var(--s)-2*var(--hc))/2)] [--f:calc(2*var(--s)*var(--r)+4*var(--mv)-2*var(--vc)-2px)]"
 >
   <div
-    class="text-[0] pb-[calc(var(--s)*var(--r)_+_var(--mv))] before:content-[''] before:w-[calc(var(--s)/2_+_var(--mh))] before:float-left before:h-[140%] before:[shape-outside:repeating-linear-gradient(#0000_0_calc(var(--f)_-_2px),_#000_0_var(--f))]"
+    class="text-[0] pb-[calc(var(--s)*var(--r)+var(--mv))] before:content-[''] before:w-[calc(var(--s)/2+var(--mh))] before:float-left before:h-[140%] before:[shape-outside:repeating-linear-gradient(#0000_0_calc(var(--f)-2px),#000_0_var(--f))]"
   >
     {
       skillsWithIcons.map((skill) => (
-        <div class="w-[var(--s)] m-[var(--mv)_var(--mh)] h-[calc(var(--s)*var(--r))] inline-block text-[length:initial] mb-[calc(var(--mv)_-_var(--vc))]">
+        <div class="w-(--s) m-[var(--mv)_var(--mh)] h-[calc(var(--s)*var(--r))] inline-block text-[length:initial] mb-[calc(var(--mv)-var(--vc))]">
           <a class="group" href={skill.link} target="_blank" title={skill.name}>
             <img
               loading="lazy"
